@@ -1,0 +1,568 @@
+<!-- Hero Section -->
+<section class="hero-section">
+  <!-- Header Navigation - Start of Hero -->
+  <header class="navbar-sticky" [class.scrolled]="isScrolled">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <img src="assets/img/lHC.png" alt="Hassan Construction Logo" />
+      </a>
+      <ul class="nav-links">
+        <li>
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a routerLink="/services" routerLinkActive="active">Services</a>
+        </li>
+        
+        <li>
+          <a routerLink="/portfolio" routerLinkActive="active"
+            >Portfolio</a
+          >
+        </li>
+        <li>
+          <a routerLink="/contact" routerLinkActive="active">Contact Us</a
+          >
+        </li>
+      </ul>
+
+    </div>
+  </header>
+
+  <!-- Hero Content -->
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i class="bi bi-patch-check-fill"></i>
+      Premier Civil & Structural Builders
+    </div>
+    <h1 class="hero-title">HASSAN CONSTRUCTION</h1>
+    <h2 class="hero-title">FOUNDATION FOR LIFE</h2>
+
+    <h1 class="hero-title2">Premium Construction & Real Estate Development</h1>
+
+    <p class="hero-subtitle">
+      Foundation for Life” captures what we stand for: strong foundations,
+      responsible development and spaces designed to support the lives and
+      ambitions of the people who use them.
+    </p>
+
+    <div
+      style="display: flex; gap: 16px; justify-content: left; flex-wrap: wrap"
+    >
+      <button
+        class="btn-primary-custom"
+        routerLink="/contact"
+      >
+        <i class="bi bi-send-fill"></i>
+        Contact Us
+      </button>
+    </div>
+    <div class="floating-buttons">
+      <button
+        class="social-icon-btn"
+        (click)="scrollToSection('enquiry-form-section')"
+      >
+        <img src="assets/img/whatsapp.png" alt="WhatsApp" />
+      </button>
+
+      <button class="social-icon-btn" (click)="scrollToSection('estimator')">
+        <img src="assets/img/instagram.png" alt="Instagram" />
+      </button>
+      <button class="social-icon-btn" (click)="scrollToSection('estimator')">
+        <img src="assets/img/facebook.png" alt="Instagram" />
+      </button>
+    </div>
+  </div>
+</section>
+
+<div class="container-custom">
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-number"><span></span>2019</div>
+      <div class="stat-label">Established</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">20<span>+</span></div>
+      <div class="stat-label">Structures Built</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">99.8<span>%</span></div>
+      <div class="stat-label">On-Time Delivery</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">4<span>+</span></div>
+      <div class="stat-label">Core Services</div>
+    </div>
+  </div>
+</div>
+
+<!-- Interactive Construction Cost Estimator Section -->
+<!-- <section id="estimator" class="section-padding">
+  <div class="container-custom">
+    <div class="section-header">
+      <span class="section-tag">Interactive Calculator</span>
+      <h2 class="section-title">Instant Construction Cost Estimator</h2>
+      <p class="section-subtitle">Get a quick preliminary budget range for your upcoming construction project.</p>
+    </div>
+
+    <div style="background: #ffffff; border-radius: var(--radius-lg); padding: 40px; box-shadow: var(--card-shadow); max-width: 900px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; align-items: center;">
+
+        <div>
+          <label class="form-label-custom">1. Select Project Type</label>
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+            <button
+              *ngFor="let type of ['Turnkey Commercial', 'Luxury Residential', 'Structural Renovation', 'Infrastructure Civil']"
+              type="button"
+              [class.active]="estimatorType === type"
+              (click)="onEstimatorTypeChange(type)"
+              class="radio-card"
+              style="text-align: left; padding: 14px 18px; font-size: 0.95rem;">
+              <i class="bi bi-building me-2 text-warning"></i> {{ type }}
+            </button>
+          </div>
+
+          <label class="form-label-custom">2. Estimated Area: <strong>{{ estimatorSqFt }} sq. ft.</strong></label>
+          <input type="range" min="500" max="25000" step="250" [value]="estimatorSqFt" (input)="onEstimatorSqFtChange($event)" style="width: 100%; accent-color: var(--accent-gold);">
+        </div>
+
+        <div style="background: linear-gradient(135deg, #0b132b, #1c2541); color: #ffffff; padding: 36px; border-radius: var(--radius-md); text-align: center;">
+          <i class="bi bi-cash-stack text-warning" style="font-size: 3rem; margin-bottom: 12px; display: block;"></i>
+          <span style="color: #94a3b8; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">Estimated Cost Range</span>
+          <h3 style="font-size: 2.2rem; font-weight: 800; color: var(--accent-gold); margin: 12px 0 20px;">{{ estimatedCostRange }}</h3>
+          <p style="color: #cbd5e1; font-size: 0.9rem; margin-bottom: 24px;">*Includes architectural materials, civil labor, permits, and quality engineering supervision.</p>
+          <button class="btn-primary-custom" (click)="applyEstimateToForm()" style="width: 100%; justify-content: center;">
+            Use Estimate in Enquiry Form <i class="bi bi-arrow-down-circle"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- VISION, MISSION & VALUES (new section) -->
+<section class="section-padding">
+  <div class="container-custom">
+    <div class="section-header">
+      <span class="section-tag">Our Direction</span>
+      <h2 class="section-title">Vision, Mission &amp; Values</h2>
+      <p class="section-subtitle">
+        Guiding principles that define our purpose and approach.
+      </p>
+    </div>
+
+    <div class="vmv-grid">
+      <div class="vmv-card">
+        <h3><i class="bi bi-eye"></i> Vision</h3>
+        <p>
+          To become a trusted and respected name in construction and real estate
+          development by creating high-quality, sustainable and thoughtfully
+          planned spaces that add long-term value to customers and communities.
+        </p>
+      </div>
+      <div class="vmv-card">
+        <h3><i class="bi bi-rocket-takeoff"></i> Mission</h3>
+        <p>
+          To deliver projects with high standards of quality and workmanship,
+          professional execution, transparent dealings, modern solutions and a
+          strong focus on customer satisfaction and lasting value.
+        </p>
+      </div>
+    </div>
+
+    <h3
+      style="
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary-navy);
+        margin: 40px 0 20px;
+      "
+    >
+      Core Values
+    </h3>
+    <div class="values-grid">
+      <div class="value-item">
+        <span class="value-icon"><i class="bi bi-trophy"></i></span>
+        <h4>Quality</h4>
+        <p>We treat quality as the foundation of every successful project.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-icon"><i class="bi bi-shield-check"></i></span>
+        <h4>Integrity</h4>
+        <p>We value transparency, honesty and professional ethics.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-icon"><i class="bi bi-people"></i></span>
+        <h4>Customer Focus</h4>
+        <p>We design and execute around real customer needs.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-icon"><i class="bi bi-lightbulb"></i></span>
+        <h4>Innovation</h4>
+        <p>
+          We seek better construction methods and practical design solutions.
+        </p>
+      </div>
+      <div class="value-item">
+        <span class="value-icon"><i class="bi bi-shield-lock"></i></span>
+        <h4>Reliability</h4>
+        <p>We build dependable relationships through responsible execution.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-icon"><i class="bi bi-tree"></i></span>
+        <h4>Sustainability</h4>
+        <p>We promote efficient development with long-term value in mind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Services Section -->
+<section
+  id="services"
+  class="section-padding"
+  style="background-color: #f1f5f9"
+>
+  <div class="container-custom">
+    <div class="section-header">
+      <span class="section-tag">Core Specializations</span>
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">
+        Delivering high-precision engineering across commercial, residential,
+        and industrial sectors.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon-box"><i class="bi bi-building"></i></div>
+        <h3>Residential Construction</h3>
+        <p>
+          Modern apartments, homes & housing developments designed for comfort,
+          safety and contemporary lifestyles.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon-box"><i class="bi bi-house-heart"></i></div>
+        <h3>Commercial Construction</h3>
+        <p>
+          Efficient commercial spaces with quality materials, modern
+          presentation and long-term usability.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon-box"><i class="bi bi-tools"></i></div>
+        <h3>Land Development</h3>
+        <p>
+          Site preparation, infrastructure development and planning solutions
+          for residential & commercial land.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon-box"><i class="bi bi-globe-americas"></i></div>
+        <h3>Project Development</h3>
+        <p>
+          Integrated project planning and execution with quality control,
+          coordination and timely delivery.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon-box"><i class="bi bi-rulers"></i></div>
+        <h3>Architectural Design & 3D BIM</h3>
+        <p>
+          State-of-the-art 3D BIM modeling, CAD blueprint creation, structural
+          calculations, and permit submission management.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon-box"><i class="bi bi-shield-check"></i></div>
+        <h3>Construction Management</h3>
+        <p>
+          Coordination of contractors, materials, timelines and quality
+          standards for smooth execution.
+        </p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-box"><i class="bi bi-shield-check"></i></div>
+        <h3>Project Management & Quality Assurance</h3>
+        <p>
+          End-to-end site oversight, material testing, safety compliance
+          monitoring, and guaranteed on-time budget execution.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Showcase Gallery -->
+<section id="projects" class="section-padding">
+  <div class="container-custom">
+    <div class="section-header">
+      <span class="section-tag">Gallery</span>
+      <h2 class="section-title">Featured Hassan Construction Projects</h2>
+      <p class="section-subtitle">
+        Explore some of our landmark constructions built across major
+        metropolitan regions.
+      </p>
+    </div>
+
+    <!-- Category Filter Tabs -->
+    <!-- <div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap;">
+      <button
+        *ngFor="let cat of ['ALL', 'COMMERCIAL', 'RESIDENTIAL', 'CIVIL']"
+        type="button"
+        (click)="filterProjects(cat)"
+        [class.active]="activeProjectCategory === cat"
+        class="radio-card"
+        style="min-width: 130px; border-radius: 50px;">
+        {{ cat }}
+      </button>
+    </div> -->
+    <div class="projects-carousel" aria-label="Project image gallery">
+      <button
+        class="gallery-control gallery-control-previous"
+        type="button"
+        aria-label="Show previous projects"
+        (click)="showPreviousGalleryImages()"
+      >
+        <i class="bi bi-arrow-left" aria-hidden="true"></i>
+      </button>
+
+      <div class="projects-viewport">
+        <div
+          class="projects-track"
+          [style.transform]="'translateX(-' + (galleryStartIndex * 33.333333) + '%)'"
+        >
+        <div
+          class="project-card"
+          *ngFor="let image of galleryImages; let imageIndex = index; trackBy: trackGalleryImage"
+        >
+          <img [src]="image" [alt]="'Hassan Construction project ' + (imageIndex + 1)" />
+        </div>
+        </div>
+      </div>
+
+      <button
+        class="gallery-control gallery-control-next"
+        type="button"
+        aria-label="Show next projects"
+        (click)="showNextGalleryImages()"
+      >
+        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section
+  id="services"
+  class="section-padding"
+  style="background-color: #f1f5f9"
+>
+  <div class="container-custom">
+    <div class="section-header">
+      <span class="section-tag">Featured Project </span>
+      <h2 class="section-title">Azure Heights Apartment</h2>
+      <p class="section-subtitle">
+        Khan Co-Operative Society, Nousha, Phulwari Sharif, Patna
+      </p>
+    </div>
+
+    <!-- <section id="projects" class="section-padding" style="background:#f1f5f9;"> -->
+    <div class="container-custom">
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="assets/img/1.png" alt="Instagram" />
+          <div class="project-overlay">
+            <span class="project-category">RESIDENTIAL</span>
+            <h3 class="project-title">Azure Heights Apartment</h3>
+            <div class="project-location">
+              <i class="bi bi-geo-alt text-warning me-1"></i> Nousha, Phulwari
+              Sharif, Patna
+            </div>
+            <!-- <p style="margin-top:10px;padding:10px;border-radius:20px; color:#475569;background-color: #cbd5e1; font-size:0.9rem;">Contemporary residential planning · quality construction · comfort-oriented spaces.</p> -->
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="assets/img/2.jpg" alt="Instagram" />
+          <div class="project-overlay">
+            <span class="project-category">COMMERCIAL</span>
+            <h3 class="project-title">Patna Business Centre</h3>
+            <div class="project-location">
+              <i class="bi bi-geo-alt text-warning me-1"></i> Patliputra Colony,
+              Patna
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- </section> -->
+  </div>
+</section>
+<section class="section-padding">
+  <div class="container-custom">
+    <div class="section-header">
+      <span class="section-tag">Our Team</span>
+      
+      <h2 class="section-title">Driven by Responsibility. Built on Trust.</h2>
+      <p class="section-subtitle">
+       Our leadership and engineering team at Hassan Construction brings together decades of hands-on experience, technical expertise, and a shared commitment to excellence. We believe that great buildings are born from great teams—and great teams are built on mutual respect, clear communication, and unwavering integrity.
+      </p>
+    </div>
+
+    
+    <div class="values-grid1">
+
+  <div class="value-item1">
+    <img src="assets/img/21.png" alt="Jafar Imam Qamar">
+    <div class="value-content1">
+      <h4>Jafar Imam Qamar</h4>
+      <p>CEO</p>
+    </div>
+  </div>
+
+  <div class="value-item1">
+    <img src="assets/img/23.png" alt="Mohammad Altamash Ahmad">
+    <div class="value-content1">
+      <h4>Farha Zia</h4>
+      <p>Managing Director</p>
+    </div>
+  </div>
+  <div class="value-item1">
+    <img src="assets/img/20.png" alt="Mohammad Altamash Ahmad">
+    <div class="value-content1">
+      <h4>Mohammad Altamash Ahmad</h4>
+      <p>Business Development Head</p>
+    </div>
+  </div>
+  <div class="value-item1">
+    <img src="assets/img/22.png" alt="Mohammad Altamash Ahmad">
+    <div class="value-content1">
+      <h4>Darakhshan Nahid Homa</h4>
+      <p>Senior Advisory</p>
+    </div>
+  </div>
+  
+  <div class="value-item1">
+    <img src="assets/img/17.png" alt="Muzammil Haque">
+    <div class="value-content1">
+      <h4>Muzammil Haque</h4>
+      <p>Senior Site Engineer</p>
+    </div>
+  </div>
+
+  <div class="value-item1">
+    <img src="assets/img/18.png" alt="Erfan Gani">
+    <div class="value-content1">
+      <h4>Erfan Gani</h4>
+      <p>Architect Designer</p>
+    </div>
+  </div>
+
+  <div class="value-item1">
+    <img src="assets/img/19.png" alt="Nadeem Ahmed">
+    <div class="value-content1">
+      <h4>Nadeem Ahmed</h4>
+      <p>Sales Representative</p>
+    </div>
+  </div>
+
+
+</div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container-custom">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-container">
+          <a href="#" class="brand-logo">
+            <img src="assets/img/lHC.png" alt="Hassan Construction Logo" />
+            <h3>HASSAN CONSTRUCTION</h3>
+          </a>
+        </div>
+
+        <p>
+          Foundation for Life — Premium Construction & Real Estate Development.
+          Established 2019, Patna, Bihar.
+        </p>
+        <div style="margin-top: 16px; font-size: 0.88rem" class="text-warning">
+          <i class="bi bi-globe me-1"></i> Official Domain:
+          <strong>hassanconstruction.com</strong>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li>
+            <a href="#services" (click)="scrollToSection('services')"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a href="#estimator" (click)="scrollToSection('estimator')"
+              >Cost Estimator</a
+            >
+          </li>
+          <li>
+            <a href="#projects" (click)="scrollToSection('projects')"
+              >Portfolio</a
+            >
+          </li>
+          <li>
+            <a
+              href="#enquiry-form-section"
+              (click)="scrollToSection('enquiry-form-section')"
+              >Enquiry Form</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Specializations</h4>
+        <ul class="footer-links">
+          <li>Residential Construction</li>
+          <li>Commercial Construction</li>
+          <li>Land Development</li>
+          <li>Project Management</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Contact & Offices</h4>
+        <p style="font-size: 0.9rem; margin-bottom: 8px">
+          <i class="bi bi-geo-alt text-warning me-2"></i> 152, Patliputra
+          Colony, PNB Campus, Patna – 800013
+        </p>
+        <p style="font-size: 0.9rem; margin-bottom: 8px">
+          <i class="bi bi-envelope text-warning me-2"></i> info&#64;hc.co.in
+        </p>
+        <p style="font-size: 0.9rem; margin-bottom: 8px">
+          <i class="bi bi-telephone text-warning me-2"></i> +91 7870704668 /
+          7061696510
+        </p>
+        <p style="font-size: 0.9rem">
+          <i class="bi bi-shield-check text-success me-2"></i> Est. 2019 · Patna
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        © 2026 Hassan Construction (hassanconstruction.com). All Rights
+        Reserved.
+      </div>
+      <!-- <div>Designed with Angular & Bootstrap 5 Backend Integration</div> -->
+    </div>
+  </div>
+</footer>
