@@ -364,7 +364,7 @@ a {
 
 /* Hero Section */
 .hero-section {
-  height:40hv;
+  min-height: 680px;
   position: relative;
 
   background:
@@ -1342,7 +1342,53 @@ footer {
 }
 
 @media (max-width: 640px) {
-  .hero-title { font-size: 2.2rem; }
+  .hero-section {
+    min-height: 0;
+    margin: 10px;
+    padding: 96px 16px 72px;
+    border-radius: 20px;
+    background-position: 62% center;
+  }
+
+  .hero-content {
+    min-height: 0;
+    padding: 28px 4px 20px;
+  }
+
+  .hero-badge {
+    max-width: 100%;
+    margin-bottom: 18px;
+    padding: 7px 12px;
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+
+  .hero-title {
+    max-width: 100%;
+    font-size: clamp(2rem, 10vw, 2.5rem);
+    line-height: 1.08;
+    margin-bottom: 16px;
+  }
+
+  .hero-title2 {
+    max-width: 100%;
+    font-size: clamp(1.35rem, 6vw, 1.75rem);
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+
+  .hero-subtitle {
+    max-width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 26px;
+  }
+
+  .hero-content .btn-primary-custom {
+    padding: 13px 22px;
+    font-size: 0.95rem;
+  }
+
   .form-grid { grid-template-columns: 1fr; }
   .form-group-full { grid-column: span 1; }
   .footer-grid { grid-template-columns: 1fr; }
