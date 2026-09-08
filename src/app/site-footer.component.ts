@@ -19,7 +19,7 @@ import { RouterLink } from '@angular/router';
             <p>Foundation for Life - Premium Construction &amp; Real Estate Development. Established 2019, Patna, Bihar.</p>
             <div class="footer-domain">
               <i class="bi bi-globe"></i>
-              Official Domain: <strong>hassanconstruction.com</strong>
+              Official Domain: <strong>hassanconstructionpatna.in</strong>
             </div>
           </div>
 

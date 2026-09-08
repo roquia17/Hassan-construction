@@ -71,6 +71,15 @@ export class HomePageComponent {
   galleryStartIndex = 0;
 
   isScrolled = false;
+  mobileMenuOpen = false;
+
+  toggleMobileMenu(): void {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
+  closeMobileMenu(): void {
+    this.mobileMenuOpen = false;
+  }
 
   scrollToSection(sectionId: string): void {
     const el = document.getElementById(sectionId);

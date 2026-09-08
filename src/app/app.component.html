@@ -6,7 +6,17 @@
       <a href="#" class="brand-logo">
         <img src="assets/img/lHC.png" alt="Hassan Construction Logo" />
       </a>
-      <ul class="nav-links">
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-label="Toggle navigation menu"
+        [attr.aria-expanded]="mobileMenuOpen"
+        aria-controls="primary-navigation"
+        (click)="toggleMobileMenu()"
+      >
+        <i class="bi" [class.bi-list]="!mobileMenuOpen" [class.bi-x-lg]="mobileMenuOpen" aria-hidden="true"></i>
+      </button>
+      <ul id="primary-navigation" class="nav-links" [class.mobile-open]="mobileMenuOpen" (click)="closeMobileMenu()">
         <li>
           <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
             >Home</a
@@ -58,6 +68,7 @@
         Contact Us
       </button>
     </div>
+    <!-- Floating Buttons -->
     <div class="floating-buttons">
       <button
         class="social-icon-btn"
@@ -335,13 +346,10 @@
       </button>
 
       <div class="projects-viewport">
-        <div
-          class="projects-track"
-          [style.transform]="'translateX(-' + (galleryStartIndex * 33.333333) + '%)'"
-        >
+        <div class="projects-track">
         <div
           class="project-card"
-          *ngFor="let image of galleryImages; let imageIndex = index; trackBy: trackGalleryImage"
+          *ngFor="let image of visibleGalleryImages; let imageIndex = index; trackBy: trackGalleryImage"
         >
           <img [src]="image" [alt]="'Hassan Construction project ' + (imageIndex + 1)" />
         </div>
@@ -496,7 +504,7 @@
         </p>
         <div style="margin-top: 16px; font-size: 0.88rem" class="text-warning">
           <i class="bi bi-globe me-1"></i> Official Domain:
-          <strong>hassanconstruction.com</strong>
+          <strong>hassanconstructionpatna.in</strong>
         </div>
       </div>
 
@@ -540,26 +548,16 @@
 
       <div>
         <h4 class="footer-title">Contact & Offices</h4>
-        <p style="font-size: 0.9rem; margin-bottom: 8px">
-          <i class="bi bi-geo-alt text-warning me-2"></i> 152, Patliputra
-          Colony, PNB Campus, Patna – 800013
-        </p>
-        <p style="font-size: 0.9rem; margin-bottom: 8px">
-          <i class="bi bi-envelope text-warning me-2"></i> info&#64;hc.co.in
-        </p>
-        <p style="font-size: 0.9rem; margin-bottom: 8px">
-          <i class="bi bi-telephone text-warning me-2"></i> +91 7870704668 /
-          7061696510
-        </p>
-        <p style="font-size: 0.9rem">
-          <i class="bi bi-shield-check text-success me-2"></i> Est. 2019 · Patna
-        </p>
+        <p class="footer-contact"><i class="bi bi-geo-alt"></i> 152, Patliputra Colony, PNB Campus, Patna - 800013</p>
+        <p class="footer-contact"><i class="bi bi-envelope"></i> info&#64;hc.co.in</p>
+        <p class="footer-contact"><i class="bi bi-telephone"></i> +91 7870704668 / 7061696510</p>
+        <p class="footer-contact"><i class="bi bi-shield-check"></i> Est. 2019 - Patna</p>
       </div>
     </div>
 
     <div class="footer-bottom">
       <div>
-        © 2026 Hassan Construction (hassanconstruction.com). All Rights
+        © 2026 Hassan Construction (hassanconstructionpatna.in). All Rights
         Reserved.
       </div>
       <!-- <div>Designed with Angular & Bootstrap 5 Backend Integration</div> -->
