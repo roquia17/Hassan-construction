@@ -9,7 +9,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     <header class="navbar-sticky" [class.scrolled]="isScrolled" [class.dark-header]="darkHeader">
       <div class="nav-container">
         <a routerLink="/" class="brand-logo" aria-label="Hassan Construction home">
-          <img src="assets/img/lHC.png" alt="Hassan Construction Logo" />
+          <img src="assets/img/HC1.png" alt="Hassan Construction Logo" />
         </a>
         <button
           type="button"
